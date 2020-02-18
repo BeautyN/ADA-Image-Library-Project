@@ -1,0 +1,92 @@
+*{
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+body{
+    background: #142850;
+}
+h1{
+    letter-spacing: 1em;
+    font-size: 2em;
+}
+.container{
+    width: 60vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto auto;
+    grid-gap: 5px;
+}
+.box{
+    border-radius: 3px;
+    padding: 10px;
+    /* background: red; */
+}
+.welcome{
+    text-align: center;
+}
+.login{
+    text-align: center;
+    background: #27496d;
+    grid-row: 1/5;
+}
+.search{
+    grid-column: 1;
+    grid-row: 2/4;
+    text-align: center;
+}
+.images{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+
+/* forms */
+div.login form input{
+    width: 80%;
+    border-radius: 50px;
+    border: none;
+    padding-left: 10px;
+    margin: 10px 0 0 0;
+    color: black;
+}
+div.login form input[type=submit]{
+    background: #00a8cc;
+    width: 85%;
+}
+
+div.search form input[type=text]{
+    border-radius: 50px 0 0 50px;
+    width: 30%;
+    border: none;
+    padding-left: 10px;
+    color: black;
+}
+div.search form input[type=submit]{
+    border-radius: 0 50px 50px 0;
+    width: 10%;
+    border: none;
+    background: #00a8cc;
+}
+
+/* images */
+.card{
+    height: 200px;
+    width: 32%;
+    display: inline-block;
+    padding: 1px;
+}
+.card-image{
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 3px;
+}
+figure{
+    background: #27496d;
+    width: 100%;
+    margin: 0;
+    transform: translateY(-13px);
+    text-align: center;
+    border-radius: 3px;
+}
