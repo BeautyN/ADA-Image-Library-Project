@@ -1,3 +1,5 @@
+// importing images
+
 const imageLibrary = [
     {image: 'bunny-and-chick.jpeg', alt: 'bunny and chick'},
     {image: 'cat.jpeg', alt: 'cat'},
@@ -30,4 +32,23 @@ imageLibrary.forEach(image => {
             </figure>
         </div>
     `
+})
+
+// allowing user to filter
+const searchform = document.querySelector('.search form');
+
+const filterImages = (search) => {
+    Array.from(imagebox.children)
+        .filter(card => !card.innerText.toLowerCase().includes(search))
+        .forEach(card => card.classList.add('filtered'));
+
+    Array.from(imagebox.children)
+        .filter(card => card.innerText.toLowerCase().includes(search))
+        .forEach(card => card.classList.remove('filtered'));
+}
+
+searchform.addEventListener('keyup', e => {
+    e.preventDefault();
+    const search = searchform.search.value.trim().toLowerCase();
+    filterImages(search);
 })

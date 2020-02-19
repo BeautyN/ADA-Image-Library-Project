@@ -90,3 +90,7 @@ figure{
     text-align: center;
     border-radius: 3px;
 }
+
+.filtered{
+    display: none;
+}
