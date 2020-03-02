@@ -19,36 +19,4 @@ const imageLibrary = [
     {image: 'swallow.jpeg', alt: 'swallow'}
 ];
 
-const imagebox = document.querySelector('.images');
 
-imageLibrary.forEach(image => {
-    imagebox.innerHTML += `
-        <div class="card">
-            <div class="card-image">
-                <img src="assets/${image.image}" min-width="100%" height="110%" alt="${image.alt}">
-            </div>
-            <figure>
-                <p>${image.alt}</p>
-            </figure>
-        </div>
-    `
-})
-
-// allowing user to filter
-const searchform = document.querySelector('.search form');
-
-const filterImages = (search) => {
-    Array.from(imagebox.children)
-        .filter(card => !card.innerText.toLowerCase().includes(search))
-        .forEach(card => card.classList.add('filtered'));
-
-    Array.from(imagebox.children)
-        .filter(card => card.innerText.toLowerCase().includes(search))
-        .forEach(card => card.classList.remove('filtered'));
-}
-
-searchform.addEventListener('keyup', e => {
-    e.preventDefault();
-    const search = searchform.search.value.trim().toLowerCase();
-    filterImages(search);
-})
